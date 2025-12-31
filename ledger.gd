@@ -19,6 +19,7 @@ func add_unit(unit: Node, location: Variant) -> void:
 
 func hover_location(location: Variant) -> void:
 	_hovered_location = location
+	_move_cursor(location)
 	# Consider using Dictionary inversion to optimize
 	_hovered_unit = _units.find_key(location)
 
@@ -31,3 +32,6 @@ func select_location() -> void:
 
 
 @abstract func _place_unit(unit: Node, location: Variant) -> void
+
+
+@abstract func _move_cursor(location: Variant) -> void
